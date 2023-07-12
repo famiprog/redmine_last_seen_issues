@@ -1,5 +1,7 @@
 # redmine-last-seen-issues
 
+This is a plugin for [Redmine](https://www.redmine.org/).
+
 ## The need
 
 When organzing and collaborating within our team, we often "touch" (i.e. see, edit, discuss, etc.) many tasks in a relatively short time span. We often had the need to reopen "that task from 5 minutes ago". Sometimes reopening a closed tab would help. Maybe sometimes the browser history. And other times we just texted a co-worker: "what was again the task # we just discussed?". We cannot hide, that this process generates often a bit of frustration.
