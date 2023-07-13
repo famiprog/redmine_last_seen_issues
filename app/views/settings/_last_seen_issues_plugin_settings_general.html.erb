@@ -1,0 +1,5 @@
+<p>
+    <label for="settings_number_for_last_displayed_issues"><%= l(:number_for_last_displayed_issues_settings) %> </label>
+    <%= text_field_tag "settings[number_for_last_displayed_issues]", @settings['number_for_last_displayed_issues'], :size => 20 %>
+    <em class="info"><%= t(:number_for_last_displayed_issues_settings_explanation) %></em>
+</p>
