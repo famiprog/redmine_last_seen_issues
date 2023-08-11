@@ -1,0 +1,43 @@
+var issues_ids = JSON.parse(localStorage.getItem("last_seen_issues"));
+$.ajax({
+    method: 'GET',
+    url: "/issues.json?issue_id=" + issues_ids.join(','),
+    data: "",
+    success: function(data) {
+        var columns = JSON.parse(<%= @columns.to_json.html_safe %>);
+        var issues_list = data.issues;
+        var table_content = "<thead><tr>";
+        for (var column of columns) {
+            table_content += "<th>" + column.caption + "</th>";
+        }
+        table_content += "</tr></thead>";
+        
+        // maintains order from local storage
+        table_content += "<tbody>";
+        for (var issue_id of issues_ids) {
+            var issue = issues_list.find((issue) => issue.id == issue_id);
+            table_content += `<tr id="issue-"` + issue.id +  ` class="hascontextmenu">`;
+            for (var column of columns) {
+            var value = "";
+            if (issue[column.name]){
+                value = (issue[column.name]['name'] ? issue[column.name]['name'] : issue[column.name]);
+            }
+            if (column.name == 'id' || column.name == 'subject') {
+                value = `<a href="/issues/` + issue_id + `">` + value + "</a>";
+            }
+            
+            table_content += "<td>" + value + "</td>";
+            }
+            table_content += "</tr>"
+        }
+        table_content += "</tbody>";
+        
+        var content = `<div class="autoscroll" style="max-height: 150px">
+            <table id="last_seen_issues_table" class="list issues">` 
+            + table_content + 
+            `</table>
+            </div>`
+        $('#ajax-modal').html(content)
+        showModal('ajax-modal', '600px');
+    }
+})

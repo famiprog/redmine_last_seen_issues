@@ -1,0 +1,6 @@
+# English strings go here for Rails i18n
+en:
+  label_last_seen_issues_general: 'General'
+  number_for_last_displayed_issues_setting: 'Number of how many issues to be displayed in pop-up'
+  number_for_last_displayed_issues_setting_explanation: 'Represents the number of how many issues to be displayed in pop-up. E.g: 5'
+  label_last_seen_issues_menu_entry: "Last seen issues"
