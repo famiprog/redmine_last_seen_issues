@@ -1,0 +1,7 @@
+<%= javascript_tag do%>
+    jQuery( document ).ready(function() {
+        var $login_menu = $("div#loggedas");
+        var $li = $(".last-seen-issues-plugin");
+        $($li).prependTo($login_menu);
+    });
+<% end %>
