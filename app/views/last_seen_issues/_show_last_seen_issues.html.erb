@@ -1,0 +1,28 @@
+<div class="autoscroll" style="max-height: 250px">
+    <table id="last_seen_issues_table" class="list issues">
+        <thead>
+            <tr>
+                <% @columns.each do |column| %>
+                    <th>
+                        <%= column.caption %>
+                    </th>   
+                <% end %>
+            </tr>
+        </thead>
+        <tbody>
+            <% @issues.each do |issue| %>
+                <tr id="issue-<%= issue.id %>">
+                    <% @columns.each do |column| %>
+                        <td>
+                            <%= column_content(column, issue) %>
+                        </td>
+                    <% end %>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+<%= javascript_tag do %>
+    removeDeletedOrExtraIds(<%= @remove_ids.to_json.html_safe %>)
+<% end %>

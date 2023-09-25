@@ -1,4 +1,4 @@
-class LastSeenIssuesPluginController < ApplicationController
+class LastSeenIssuesController < ApplicationController
 
     include QueriesHelper
     helper :all
@@ -10,13 +10,10 @@ class LastSeenIssuesPluginController < ApplicationController
     def show_last_seen_issues 
         @issues = []
         @remove_ids = []
-        @columns = retrieve_query_from_session(IssueQuery).inline_columns
+        query = retrieve_query_from_session(IssueQuery)
+        @columns = query.nil? ? retrieve_query(IssueQuery).inline_columns : query.inline_columns
         ids = params[:ids].split(",");
-        issues_display_limit = LastSeenIssuesPluginSettings.get_setting(:number_for_last_displayed_issues_setting)
-        # for blank setting or not a number, default 5
-        if (issues_display_limit.blank? || !(/\A\d+\z/).match(issues_display_limit))
-          issues_display_limit = 5
-        end
+        issues_display_limit = LastSeenIssuesPluginSettings.get_max_number_of_issues
 
         for id in ids do
             # limit was reached, next id-s are extra and needs to be removed from local storage
