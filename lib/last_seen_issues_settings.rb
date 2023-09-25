@@ -1,4 +1,4 @@
-class LastSeenIssuesPluginSettings
+class LastSeenIssuesSettings
 
     public
 
@@ -7,7 +7,7 @@ class LastSeenIssuesPluginSettings
     end
 
     def self.get_max_number_of_issues
-        issues_display_limit = LastSeenIssuesPluginSettings.get_setting(:number_of_issues_displayed)
+        issues_display_limit = LastSeenIssuesSettings.get_setting(:number_of_issues_displayed)
         # for blank setting or not a number, default 5
         if (issues_display_limit.blank? || !(/\A\d+\z/).match(issues_display_limit))
           issues_display_limit = 5

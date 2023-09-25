@@ -1,3 +1,3 @@
 <%= javascript_tag do %>
-    updateLastSeenIssues(<%= @issue.id %>, <%= LastSeenIssuesPluginSettings.get_max_number_of_issues %>);
+    updateLastSeenIssues(<%= @issue.id %>, <%= LastSeenIssuesSettings.get_max_number_of_issues %>);
 <% end %>

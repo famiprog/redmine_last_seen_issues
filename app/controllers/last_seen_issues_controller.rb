@@ -13,7 +13,7 @@ class LastSeenIssuesController < ApplicationController
         query = retrieve_query_from_session(IssueQuery)
         @columns = query.nil? ? retrieve_query(IssueQuery).inline_columns : query.inline_columns
         ids = params[:ids].split(",");
-        issues_display_limit = LastSeenIssuesPluginSettings.get_max_number_of_issues
+        issues_display_limit = LastSeenIssuesSettings.get_max_number_of_issues
 
         for id in ids do
             # limit was reached, next id-s are extra and needs to be removed from local storage
