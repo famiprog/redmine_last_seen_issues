@@ -17,4 +17,3 @@ Redmine::Plugin.register :redmine_last_seen_issues do
     require File.expand_path('lib/last_seen_issues_hook_listener', __dir__)
     require File.expand_path('lib/last_seen_issues_settings', __dir__)
 end
-  
