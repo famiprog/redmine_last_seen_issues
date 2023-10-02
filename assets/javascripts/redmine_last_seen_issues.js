@@ -2,7 +2,7 @@
 $(document).ready(function () {
     var $login_menu = $("div#loggedas");
     var $li = $(".last-seen-issues");
-    $($li).prependTo($login_menu);
+    $li.prependTo($login_menu);
 });
 
 function updateLastSeenIssues(issueId, displayLimit) {

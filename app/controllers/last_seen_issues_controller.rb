@@ -12,10 +12,12 @@ class LastSeenIssuesController < ApplicationController
         @remove_ids = []
         query = retrieve_query_from_session(IssueQuery)
         @columns = query.nil? ? retrieve_query(IssueQuery).inline_columns : query.inline_columns
-        ids = params[:ids].split(",");
+        ids = params[:ids].nil? || params[:ids].empty? ? [] : params[:ids].split(",")
         issues_display_limit = LastSeenIssuesSettings.get_max_number_of_issues
 
         for id in ids do
+            # check if id is a number, to_i return number until first non digit character, e.g '15test'.to_i => 15, 15.to_s != '15test' so will be rejected
+            next if id != id.to_i.to_s
             # limit was reached, next id-s are extra and needs to be removed from local storage
             if @issues.length == issues_display_limit.to_i
                  @remove_ids << id.to_i 

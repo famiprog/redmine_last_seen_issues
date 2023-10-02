@@ -5,4 +5,4 @@ fr:
   number_of_issues_displayed_explanation: 'Représente le nombre de problèmes à afficher dans la fenêtre contextuelle. Par exemple: 5'
   label_last_seen_issues_menu_entry: "Derniers problèmes rencontrés"
   history_missing_message: "Il n'y a pas d'historique pour les derniers problèmes vus!"
-  history_error_message: "Une erreur de serveur interne s'est produite ! Veuillez consulter la console du navigateur pour plus de détails!"
+  history_error_message: "Une erreur de serveur interne s'est produite !"
