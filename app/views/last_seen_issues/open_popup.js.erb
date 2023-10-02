@@ -4,12 +4,13 @@ var issues_ids = JSON.parse(localStorage.getItem("last_seen_issues"));
 if (!issues_ids || issues_ids.length == 0) {
     $('#ajax-modal').html(`<h1><%= t(:history_missing_message) %><h1>`).css("text-align", "center").css("min-height", "60px");
 } else {
+    $('#ajax-modal').html(`<h1><%= t(:history_loading_message) %><h1>`).css("text-align", "center").css("min-height", "60px");
     $.ajax({
         method: 'GET',
         url: "/show_last_seen_issues?ids=" + issues_ids.join(','),
         data: "",
         success: function(data) {
-            $('#ajax-modal').html(data);
+           $('#ajax-modal').html(data);
         },
         error: function (request, status, error) {
             $('#ajax-modal').html(`<h1><%= t(:history_error_message) %><h1>`).css("text-align", "center").css("min-height", "60px").css("color", "red");

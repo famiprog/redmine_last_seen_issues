@@ -1,6 +1,7 @@
 class LastSeenIssuesController < ApplicationController
 
     include QueriesHelper
+    # all helpers must be added, column_content can be patched by another plugin and other new methods calls will be undefined
     helper :all
 
     def open_popup
