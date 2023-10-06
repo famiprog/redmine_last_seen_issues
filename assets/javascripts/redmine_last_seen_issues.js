@@ -1,4 +1,7 @@
 // global: positioning last_seen_issues entry before logged in div
+var lastSeenIssuesKey = "last_seen_issues";
+var queryIdKey = "last_seen_issues_query_id";
+
 $(document).ready(function () {
     var $login_menu = $("div#loggedas");
     var $li = $(".last-seen-issues");
@@ -6,7 +9,6 @@ $(document).ready(function () {
 });
 
 function updateLastSeenIssues(issueId, displayLimit) {
-    var lastSeenIssuesKey = "last_seen_issues";
     var lastSeenIssuesQueue = [];
     if (localStorage.getItem(lastSeenIssuesKey)) {
         lastSeenIssuesQueue = JSON.parse(localStorage.getItem(lastSeenIssuesKey));
@@ -31,7 +33,6 @@ function updateLastSeenIssues(issueId, displayLimit) {
 }
 
 function removeDeletedOrExtraIds(removeIds) {
-    var lastSeenIssuesKey = "last_seen_issues";
     var lastSeenIssuesQueue = [];
     
     if (localStorage.getItem(lastSeenIssuesKey)) {

@@ -1,7 +1,8 @@
 # French strings go here for Rails i18n
 fr:
-  history_error_message: "Une erreur de serveur interne s'est produite !"
-  history_loading_message: "Chargement..."
+  generic_error_message: "Une erreur de serveur interne s'est produite !"
+  generic_loading_message: "Chargement..."
+  history_costum_queries_message: "Utiliser les colonnes de la requête personnalisée"
   history_missing_message: "Il n'y a pas d'historique pour les derniers problèmes vus!"
   label_last_seen_issues_menu_entry: "Derniers problèmes rencontrés"
   label_last_seen_issues_general: 'Générale'
