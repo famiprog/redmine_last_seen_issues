@@ -9,22 +9,14 @@ class LastSeenIssuesController < ApplicationController
     end
 
     def show_popup_content
-        # retrieve query with query_id if exists in params (localStorage) otherwise by default one
-        @query = params[:custom_query_id].nil? || params[:custom_query_id].empty? ? retrieve_query(IssueQuery) : IssueQuery.find_by(id: params[:custom_query_id].to_i)
-        # check if the query still exists in DB
-        @query = @query.nil? ? retrieve_query(IssueQuery) : @query
-
+        @query = retrieve_custom_query params[:custom_query_id]
         return render :partial => 'show_popup_content'
     end
 
     def show_last_seen_issues
         @issues = []
         @remove_ids = []
-        # retrieve query with query_id if exists in params (localStorage) otherwise by default one
-        @query = params[:custom_query_id].nil? || params[:custom_query_id].empty? ? retrieve_query(IssueQuery) : IssueQuery.find_by(id: params[:custom_query_id].to_i)
-        # check if the query still exists in DB
-        @query = @query.nil? ? retrieve_query(IssueQuery) : @query
-
+        @query = retrieve_custom_query params[:custom_query_id]
         # if issue ids are missing stop
         ids = params[:issues_ids].nil? || params[:issues_ids].empty? ? [] : params[:issues_ids].split(",")
         return render :partial => 'show_last_seen_issues' if ids.empty?
@@ -44,5 +36,15 @@ class LastSeenIssuesController < ApplicationController
         end
 
         return render :partial => 'show_last_seen_issues'
+    end
+
+    private
+    def retrieve_custom_query(custom_query_id)
+        # retrieve query with query_id if exists in params (localStorage) otherwise by default one
+        custom_query = custom_query_id.nil? || custom_query_id.empty? ? retrieve_query(IssueQuery) : IssueQuery.find_by(id: custom_query_id.to_i)
+        # check if the query still exists in DB
+        custom_query = custom_query.nil? ? retrieve_query(IssueQuery) : custom_query
+
+        return custom_query
     end
 end
