@@ -6,8 +6,10 @@ Redmine::Plugin.register :redmine_last_seen_issues do
     url 'https://github.com/famiprog/redmine-last-seen-issues'
     author_url 'https://github.com/famiprog'
   
-    menu :account_menu, :last_seen_issues, { :controller => 'last_seen_issues', :action => 'open_popup' }, :html => { :remote => true }, :first => true, :caption => :label_last_seen_issues_menu_entry
-
+    menu :account_menu, :last_seen_issues,
+        { :controller => 'last_seen_issues', :action => 'open_popup' },
+        :html => { :remote => true }, :caption => :label_last_seen_issues_menu_entry, :if => Proc.new {User.current.logged?}
+    
     # default values for settings, and its render
     # Note: default values appear only when there are no settings saved in db.
     settings :default => {'empty' => true, 

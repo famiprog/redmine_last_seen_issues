@@ -1,3 +1,4 @@
+<% @issues = @issues.filter{|issue| issue.visible? } %>
 <% if @issues.empty? %>
     <h1 style="text-align: center"><%= t(:history_missing_message) %><h1>
 <% else  %>
