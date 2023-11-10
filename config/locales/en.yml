@@ -1,0 +1,10 @@
+# English strings go here for Rails i18n
+en:
+  generic_error_message: "An internal server error has occurred !"
+  generic_loading_message: "Loading..."
+  history_costum_queries_message: "Use columns from costum query"
+  history_missing_message: "There is no history for last seen issues!"
+  label_last_seen_issues_menu_entry: "Last seen issues"
+  label_last_seen_issues_general: 'General'
+  number_of_issues_displayed: 'Number of issues displayed'
+  number_of_issues_displayed_explanation: 'Represents the number of how many issues to be displayed in pop-up. E.g: 5'

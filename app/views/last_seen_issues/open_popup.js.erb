@@ -1,0 +1,14 @@
+showModal('ajax-modal', '800px', '<%= t(:label_last_seen_issues_menu_entry) %>');
+$('#ajax-modal').parent().css("top", "2%").css("left", "45%");
+var query_id = localStorage.getItem(queryIdKey) ? JSON.parse(localStorage.getItem(queryIdKey)) : "";
+$.ajax({
+    method: 'GET',
+    url: "/show_popup_content?custom_query_id=" + (query_id ? query_id : ""),
+    data: "",
+    success: function (data) {
+        $('#ajax-modal').html(data);
+    },
+    error: function (request, status, error) {
+        $('#ajax-modal').html(`<h1><%= t(:generic_error_message) %><h1>`).css("text-align", "center").css("min-height", "60px").css("color", "red");
+    }
+})

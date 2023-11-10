@@ -1,0 +1,24 @@
+<%= javascript_include_tag 'redmine_last_seen_issues', plugin: 'redmine_last_seen_issues' %>
+<%= javascript_tag do %>
+    function showLastSeenIssuesTable() {
+        var dropdownQueryId = $("#last_seen_issue_query_dropdown").val();
+        if (dropdownQueryId) {
+            localStorage.setItem(queryIdKey, JSON.stringify(dropdownQueryId));
+        }
+
+        var issuesIds = localStorage.getItem(lastSeenIssuesKey) ? JSON.parse(localStorage.getItem(lastSeenIssuesKey)) : "";
+        var queryId = localStorage.getItem(queryIdKey) ? JSON.parse(localStorage.getItem(queryIdKey)) : "";
+        $('#last_seen_issues_table_container').html(`<h1><%= t(:generic_loading_message) %><h1>`).css("text-align", "center").css("min-height", "60px");
+        $.ajax({
+            method: 'GET',
+            url: "/show_last_seen_issues?issues_ids=" + (!issuesIds || issuesIds.length == 0 ? "" : issuesIds.join(',')) + "&custom_query_id=" + (queryId ? queryId : ""),
+            data: "",
+            success: function (data) {
+                $('#last_seen_issues_table_container').html(data);
+            },
+            error: function (request, status, error) {
+                $('#last_seen_issues_table_container').html(`<h1><%= t(:generic_error_message) %><h1>`).css("text-align", "center").css("min-height", "60px").css("color", "red");
+            }
+        })
+    }
+<% end %>
