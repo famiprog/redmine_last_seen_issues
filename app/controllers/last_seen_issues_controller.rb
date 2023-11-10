@@ -30,8 +30,8 @@ class LastSeenIssuesController < ApplicationController
                     @remove_ids << id.to_i 
             else
                 issue = Issue.find_by(id: id.to_i)
-                # issue was deleted, id must be removed from local storage
-                issue.nil? ? @remove_ids << id.to_i : @issues << issue
+                # issue was deleted or is not longer visible for the user, id must be removed from local storage
+                issue.nil? || !issue.visible? ? @remove_ids << id.to_i : @issues << issue
             end
         end
 
