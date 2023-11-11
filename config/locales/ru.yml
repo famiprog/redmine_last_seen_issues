@@ -1,0 +1,9 @@
+ru:
+  generic_error_message: "Произошла внутренняя ошибка сервера!"
+  generic_loading_message: "Загрузка..."
+  history_costum_queries_message: "Использовать столбцы из пользовательского запроса"
+  history_missing_message: "Истории последних просмотренных задач нет!"
+  label_last_seen_issues_menu_entry: "Последние просмотренные задачи"
+  label_last_seen_issues_general: 'Главная'
+  number_of_issues_displayed: 'Количество отображаемых задач'
+  number_of_issues_displayed_explanation: 'Представляет количество задач, которые будут отображаться во всплывающем окне. Например: 5'
