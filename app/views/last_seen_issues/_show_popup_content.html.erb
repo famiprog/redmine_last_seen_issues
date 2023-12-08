@@ -1,8 +1,7 @@
 <div id="last_seen_issues_content_container">
     <div style="float: right">
     <label> <%= t(:history_costum_queries_message) %> </label>
-    <%= select_tag "last_seen_issue_query_dropdown", 
-        options_for_select(IssueQuery.all.map{|query| [query.name, query.id.to_s]}, @query.id), :onchange => "showLastSeenIssuesTable()" %>
+    <%= select_tag "last_seen_issue_query_dropdown", options_for_select(sidebar_queries(IssueQuery, nil).map{|query| [query.name, query.id.to_s]}, @query.id), :onchange => "showLastSeenIssuesTable()" %>
     </div>
     <hr style='height: 2px'>
     <div id="last_seen_issues_table_container">
