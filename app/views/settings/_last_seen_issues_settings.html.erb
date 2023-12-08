@@ -4,6 +4,6 @@
     <em class="info"><%= t(:number_of_issues_displayed_explanation) %></em>
 
     <label for="settings_default_custom_query"><%= l(:default_custom_query) %> </label>
-    <%= text_field_tag "settings[default_custom_query]", @settings['default_custom_query'], :size => 20 %>
+    <%= select_tag 'settings[default_custom_query]', options_for_select(IssueQuery.where(project: nil).order('name').map{|query| [query.name, query.id]}, @settings["default_custom_query"]), :include_blank => true %>
     <em class="info"><%= t(:default_custom_query_explanation) %></em>
 </p>
