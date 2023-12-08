@@ -1,5 +1,7 @@
 # English strings go here for Rails i18n
 en:
+  default_custom_query: "Default custom query id"
+  default_custom_query_explanation: "Default custom query used until other custom query will be chosen from dropdown. E.g: 10"
   generic_error_message: "An internal server error has occurred !"
   generic_loading_message: "Loading..."
   history_costum_queries_message: "Use columns from costum query"

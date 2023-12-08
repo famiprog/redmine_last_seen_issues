@@ -1,5 +1,7 @@
 # French strings go here for Rails i18n
 fr:
+  default_custom_query: "Identifiant de requête personnalisé par défaut"
+  default_custom_query_explanation: "Requête personnalisée par défaut utilisée jusqu'à ce qu'une autre requête personnalisée soit choisie dans la liste déroulante. E.g: 10"
   generic_error_message: "Une erreur de serveur interne s'est produite !"
   generic_loading_message: "Chargement..."
   history_costum_queries_message: "Utiliser les colonnes de la requête personnalisée"

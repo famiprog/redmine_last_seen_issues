@@ -41,7 +41,9 @@ class LastSeenIssuesController < ApplicationController
     private
     def retrieve_custom_query(custom_query_id)
         # retrieve query with query_id if exists in params (localStorage) otherwise by default one
-        custom_query = custom_query_id.nil? || custom_query_id.empty? ? retrieve_query(IssueQuery) : IssueQuery.find_by(id: custom_query_id.to_i)
+        default_custom_query_id = LastSeenIssuesSettings.get_setting(:default_custom_query)
+        find_custom_query_id = custom_query_id.nil? || custom_query_id.empty? ? default_custom_query_id : custom_query_id
+        custom_query = find_custom_query_id.nil? || find_custom_query_id.empty? ? retrieve_query(IssueQuery) : IssueQuery.find_by(id: find_custom_query_id.to_i)
         # check if the query still exists in DB
         custom_query = custom_query.nil? ? retrieve_query(IssueQuery) : custom_query
 
