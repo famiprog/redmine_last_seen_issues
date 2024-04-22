@@ -7,6 +7,6 @@ fr:
   label_last_seen_issues_menu_entry: "Derniers problèmes rencontrés"
   label_last_seen_issues_general: 'Générale'
   number_of_issues_displayed: 'Nombre de problèmes affichés'
-  number_of_issues_displayed_explanation: 'Représente le nombre de problèmes à afficher dans la fenêtre contextuelle. Par exemple: 5'
+  number_of_issues_displayed_explanation: 'Représente le nombre de problèmes à afficher dans la fenêtre contextuelle. La valeur par défaut est 30.'
   
  

@@ -7,4 +7,4 @@ en:
   label_last_seen_issues_menu_entry: "Last seen issues"
   label_last_seen_issues_general: 'General'
   number_of_issues_displayed: 'Number of issues displayed'
-  number_of_issues_displayed_explanation: 'Represents the number of how many issues to be displayed in pop-up. E.g: 5'
+  number_of_issues_displayed_explanation: 'Represents the number of how many issues to be displayed in pop-up. Default is 30.'
