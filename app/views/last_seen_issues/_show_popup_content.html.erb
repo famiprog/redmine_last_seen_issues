@@ -5,7 +5,7 @@
         options_for_select(IssueQuery.all.map{|query| [query.name, query.id.to_s]}, @query.id), :onchange => "showLastSeenIssuesTable()" %>
     </div>
     <hr style='height: 2px'>
-    <div id="last_seen_issues_table_container">
+    <div id="last_seen_issues_table_container" style="margin-bottom: -20px">
         <%= javascript_tag do %>
             showLastSeenIssuesTable();
         <% end %>
