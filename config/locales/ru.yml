@@ -6,4 +6,4 @@ ru:
   label_last_seen_issues_menu_entry: "Последние просмотренные задачи"
   label_last_seen_issues_general: 'Главная'
   number_of_issues_displayed: 'Количество отображаемых задач'
-  number_of_issues_displayed_explanation: 'Представляет количество задач, которые будут отображаться во всплывающем окне. Например: 5'
+  number_of_issues_displayed_explanation: 'Представляет количество задач, которые будут отображаться во всплывающем окне. Например: 30'
