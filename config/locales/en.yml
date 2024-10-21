@@ -4,7 +4,7 @@ en:
   default_custom_query_explanation: "Default custom query used until other custom query will be chosen from dropdown."
   generic_error_message: "An internal server error has occurred !"
   generic_loading_message: "Loading..."
-  history_costum_queries_message: "Use columns from costum query"
+  history_costum_queries_message: "Use columns from custom query"
   history_missing_message: "There is no history for last seen issues!"
   label_last_seen_issues_menu_entry: "Last seen issues"
   label_last_seen_issues_general: 'General'
