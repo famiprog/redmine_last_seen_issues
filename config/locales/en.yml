@@ -1,12 +1,12 @@
 # English strings go here for Rails i18n
 en:
-  default_custom_query: "Default custom query id"
-  default_custom_query_explanation: "Default custom query used until other custom query will be chosen from dropdown."
+  default_custom_query: "Default custom query (for columns)"
+  default_custom_query_explanation: "If the user doesn't specify an explicit custom query (which is saved for him/her in browser's local storage), then this one will be used."
   generic_error_message: "An internal server error has occurred !"
   generic_loading_message: "Loading..."
-  history_costum_queries_message: "Use columns from custom query"
+  history_costum_queries_message: "Use columns from the following custom query"
   history_missing_message: "There is no history for last seen issues!"
   label_last_seen_issues_menu_entry: "Last seen issues"
   label_last_seen_issues_general: 'General'
   number_of_issues_displayed: 'Number of issues displayed'
-  number_of_issues_displayed_explanation: 'Represents the number of how many issues to be displayed in pop-up. Default is 30.'
+  number_of_issues_displayed_explanation: 'Default is 30.'
