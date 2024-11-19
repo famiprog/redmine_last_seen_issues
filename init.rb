@@ -1,5 +1,5 @@
 Redmine::Plugin.register :redmine_last_seen_issues do
-    name 'Redmine last seen issues plugin'
+    name 'Redmine Last Seen Issues plugin'
     author 'famiprog'
     description 'For detailed documentation see the link below.'
     version '1.0.1'

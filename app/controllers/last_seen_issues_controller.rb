@@ -10,6 +10,7 @@ class LastSeenIssuesController < ApplicationController
 
     def show_popup_content
         @query = retrieve_custom_query params[:custom_query_id]
+        @default_query_id = LastSeenIssuesSettings.get_setting(:default_custom_query)
         return render :partial => 'show_popup_content'
     end
 
@@ -43,10 +44,9 @@ class LastSeenIssuesController < ApplicationController
         # retrieve query with query_id if exists in params (localStorage) otherwise by default one
         default_custom_query_id = LastSeenIssuesSettings.get_setting(:default_custom_query)
         find_custom_query_id = custom_query_id.nil? || custom_query_id.empty? ? default_custom_query_id : custom_query_id
-        custom_query = find_custom_query_id.nil? || find_custom_query_id.empty? ? retrieve_query(IssueQuery) : IssueQuery.find_by(id: find_custom_query_id.to_i)
+        custom_query = find_custom_query_id.nil? || find_custom_query_id.empty? ? IssueQuery.default() : IssueQuery.find_by(id: find_custom_query_id.to_i)
         # check if the query still exists in DB
         custom_query = custom_query.nil? ? retrieve_query(IssueQuery) : custom_query
-
         return custom_query
     end
 end

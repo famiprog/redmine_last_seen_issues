@@ -1,7 +1,17 @@
 <div id="last_seen_issues_content_container">
     <div style="float: right">
     <label> <%= t(:history_costum_queries_message) %> </label>
-    <%= select_tag "last_seen_issue_query_dropdown", options_for_select(sidebar_queries(IssueQuery, nil).map{|query| [query.name, query.id.to_s]}, @query.id), :onchange => "showLastSeenIssuesTable()" %>
+    <%  queries_options = sidebar_queries(IssueQuery, nil).map{|query| [query.name, query.id.to_s]};
+        # search for default option if exists in settings
+        if !@default_query_id.nil? && !@default_query_id.empty?
+            default_option = queries_options.detect{|option| option[1] == @default_query_id.to_s}
+            # swap places between first option and the default option, to be displayed always on the top and add default message
+            if !default_option.nil?
+                queries_options[0], queries_options[queries_options.find_index(default_option)] = queries_options[queries_options.find_index(default_option)], queries_options[0]
+                queries_options[queries_options.find_index(default_option)] = [l(:default_custom_query_entry, custom_query: default_option[0]), default_option[1]]
+            end
+        end %>
+    <%= select_tag "last_seen_issue_query_dropdown", options_for_select(queries_options, @query.id), :onchange => "showLastSeenIssuesTable()" %>
     </div>
     <hr style='height: 2px'>
     <div id="last_seen_issues_table_container" style="margin-bottom: -20px">
