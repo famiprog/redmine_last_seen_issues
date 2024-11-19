@@ -1,4 +1,4 @@
-# redmine-last-seen-issues
+# Redmine Last Seen Issues
 
 This is a plugin for [Redmine](https://www.redmine.org/).
 
