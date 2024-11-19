@@ -2,7 +2,7 @@
 en:
   default_custom_query: "Default custom query (for columns)"
   default_custom_query_explanation: "If the user doesn't specify an explicit custom query (which is saved for him/her in browser's local storage), then this one will be used."
-  default_custom_query_entry: "Default from plugin - %{custom_query}"
+  default_custom_query_entry: "Default (cf. plugin settings) - %{custom_query}"
   generic_error_message: "An internal server error has occurred !"
   generic_loading_message: "Loading..."
   history_costum_queries_message: "Use columns from the following custom query"
