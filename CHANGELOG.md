@@ -1,4 +1,4 @@
-## Unreleased
+## 1.2.0
 * [Added default plugin custom query as first entry in dropdown](https://github.com/famiprog/redmine_last_seen_issues/pull/6)
 
 ## v1.1.0
