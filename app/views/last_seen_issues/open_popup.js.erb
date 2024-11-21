@@ -1,4 +1,4 @@
-showModal('ajax-modal', window.innerWidth - 230, '<%= t(:label_last_seen_issues_menu_entry) %>');
+showModal('ajax-modal', window.innerWidth - 230, '<%= t(:label_last_seen_issues_plugin_title) %>');
 $('#ajax-modal').parent().css("top", "18px").css("left", "185px");
 var query_id = localStorage.getItem(queryIdKey) ? JSON.parse(localStorage.getItem(queryIdKey)) : "";
 $.ajax({
