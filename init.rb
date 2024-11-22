@@ -2,7 +2,7 @@ Redmine::Plugin.register :redmine_last_seen_issues do
     name 'Redmine Last Seen Issues plugin'
     author 'famiprog'
     description 'For detailed documentation see the link below.'
-    version '1.2.0'
+    version '1.2.1'
     url 'https://github.com/famiprog/redmine-last-seen-issues'
     author_url 'https://github.com/famiprog'
   
