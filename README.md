@@ -10,7 +10,9 @@ When organzing and collaborating within our team, we often "touch" (i.e. see, ed
 
 Have a popup, that can be accessed quickly, that renders quickly and that shows the last N issues that we have opened. We saw this pattern in other apps as well.
 
-TBD screenshot
+![](img/menu-entry.png)
+
+![](img/image.png)
 
 ## Implementation details
 
